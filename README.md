@@ -6,7 +6,7 @@ Trying to build the most realistic emulator of a vacuum tube mainframe in existe
 
 I'm a programmer who has spent a lot of time looking for some interactive furniture for my apartment, eventually stumbling on a picture of an IBM 705 console. And what a *beast* it is. Best of all, it's not too intimating, remarkably easy to understand and has plenty of buttons and switches, while the large incandescent indicators give off a soft 1950's glow instead of a harsh light.
 
-[705 console](./Docs/Images/consoleWithLights.jpg)
+![705 console](./Docs/Images/consoleWithLightsNarrow.jpg)
 
 It's the sort of thing that'll spark conversation no matter the occasion, easy to explain without getting technical and its soft flickering lights create a sensation of a camp fire at night, gently twinkling away.
 
