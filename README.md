@@ -29,7 +29,7 @@ The list of devices to be emulated are:
 * 730 Printer
 * 717 Printer*
 
-*control units for these devices are only emulator as far as in necessary for original software to run.
+*control units for these devices are only emulated as far as in necessary for original software to run.
 
 ## Compatibility
 The emulator and its associated tools are developed as modern .Net applications and so should be compatible across all major operating systems. Only Windows 11 is currently tested, this is a personal project and haven't the time to test on multiple operating systems at the moment.
