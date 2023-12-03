@@ -4,7 +4,7 @@ Creating the most realistic emulator of a vacuum tube mainframe in existence. Oh
 
 ## Why?
 
-I'm a programmer who has spent a lot of time looking for some interactive furniture for my apartment, eventually stumbling on a picture of an IBM 705 console. And what a *beast* it is. Best of all, it's not too intimating, remarkably easy to interpret and has plenty of buttons and switches, while the large incandescent lights give off a soft 1950's glow instead of a harsh light.
+I'm a programmer who has spent a lot of time looking for some interactive furniture for my apartment, eventually stumbling on a picture of an IBM 705 console. And what a *beast* it is. Not too intimating, easy to interpret and has plenty of buttons and switches, while it's large incandescent lights give off a soft 1950's glow instead of a harsh LED style light.
 
 ![705 console](./Docs/Images/consoleWithLightsNarrow.jpg)
 
