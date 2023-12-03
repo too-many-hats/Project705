@@ -59,5 +59,29 @@ public static class Characters
             new('@', 0, 0b00_1100),
             new('t', 1, 0b00_1111),//tape mark
         ];
+
+    public static bool TryGet(char c, out Character character)
+    {
+        character = All.FirstOrDefault(x => x.Char == c) ?? new Character(' ', 0, 0);
+
+        return character is null;
+    }
+
+    public static bool TryGet(byte val, out Character character)
+    {
+        character = All.FirstOrDefault(x => x.Value == val) ?? new Character(' ', 0, 0);
+
+        return character is null;
+    }
+
+    /// <summary>
+    /// Get the character whose value matches val. Throws if val is not valid.
+    /// </summary>
+    /// <param name="val">The character value to find.</param>
+    /// <returns>The matching character.</returns>
+    public static Character Get(byte val)
+    {
+        return All.First(x => x.Value == val);
+    }
 }
 
