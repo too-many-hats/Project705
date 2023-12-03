@@ -9,10 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docs", "Docs\Docs.csproj", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{8F16D4A9-47BA-4072-B9B4-FC8E83D88861}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinUtils", "BinUtils\BinUtils.csproj", "{DCD97848-145F-45C0-8EC9-D68A7E421F1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinUtils", "BinUtils\BinUtils.csproj", "{DCD97848-145F-45C0-8EC9-D68A7E421F1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

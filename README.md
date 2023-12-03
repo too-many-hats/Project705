@@ -13,26 +13,26 @@ It's the sort of thing that'll spark conversation no matter the occasion, easy t
 Most importantly however, I'll be something to brighten the day of my little nieces when they come to visit, who'll love playing with the lights, buttons and switches.
 
 ## The machine
-The goal is to emulate a complete IBM 705 II installation as it appeared in 1958. This includes the processor and the devices it.
+The goal is to emulate a complete IBM 705 II installation as it appeared in 1958. This includes the processor and the I/O devices it uses.
 
-Only the console and possibly the console typewriter are intended to physically built.
+Only the console and possibly console typewriter are intended to physically built.
 
 The list of devices to be emulated are:
 
 * 705 II CPU, with 40,000 characters of memory
-* 714 Card Reader
-* 722 Card Punch
-* 727 Magnetic Tape units
+* 714 Card Reader*
+* 722 Card Punch*
+* 727 Magnetic Tape units*
 * 734 Magnetic Drum Storage
 * 782 Console and Typewriter
 * 760 Record Storage and Control
 * 730 Printer
-* 717 Printer
+* 717 Printer*
 
-Where a device has a control unit, the control unit is also emulated.
+*control units for these devices are only emulator as far as in necessary for original software to run.
 
 ## Compatibility
-The emulator and its associated tools are developed as modern .Net applications and so should be compatible across all major operating systems. Only Windows 11 is currently tested, this is a personal project after all.
+The emulator and its associated tools are developed as modern .Net applications and so should be compatible across all major operating systems. Only Windows 11 is currently tested, this is a personal project and haven't the time to test on multiple operating systems at the moment.
 
 ## Contributing
 This is a personal project for now so contributions aren't currently accepted.
