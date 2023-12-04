@@ -1,9 +1,9 @@
 ﻿using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Emulator.Views;
+using DesktopApp.Views;
 
-namespace Emulator;
+namespace DesktopApp;
 
 public partial class App : Application
 {

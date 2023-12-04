@@ -3,7 +3,7 @@
 using Avalonia;
 using Avalonia.ReactiveUI;
 
-namespace Emulator.Desktop;
+namespace DesktopApp.Desktop;
 
 class Program
 {

@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 
-namespace Emulator.Views;
+namespace DesktopApp.Views;
 
 public partial class MainWindow : Window
 {

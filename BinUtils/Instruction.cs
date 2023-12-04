@@ -3,7 +3,6 @@
 /// <summary>
 /// The lowest level instruction encode/decode functionality.
 /// This class performs little to no validation and is only concerned with translating to and from binary representations of instructions.
-/// 
 /// </summary>
 public class Instruction
 {
