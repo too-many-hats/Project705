@@ -8,4 +8,25 @@
         x:Class="DesktopApp.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="DesktopApp">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"></RowDefinition>
+			<RowDefinition Height="28"></RowDefinition>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			
+		</Grid.ColumnDefinitions>
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="200"></ColumnDefinition>
+				<ColumnDefinition Width="150"></ColumnDefinition>
+				<ColumnDefinition Width="200"></ColumnDefinition>
+				<ColumnDefinition Width="150"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<Label Grid.Column="0">Installation Purchase Cost:</Label>
+			<Label Grid.Column="1" Name="InstallationCostLabel"></Label>
+			<Label Grid.Column="2">Installation Monthly Rental:</Label>
+			<Label Grid.Column="3" Name="InstallationRentalLabel"></Label>
+		</Grid>
+	</Grid>
 </Window>

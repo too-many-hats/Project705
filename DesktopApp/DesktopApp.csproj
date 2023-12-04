@@ -24,6 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BinUtils\BinUtils.csproj" />
+    <ProjectReference Include="..\Emulator\Emulator.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="App.axaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>

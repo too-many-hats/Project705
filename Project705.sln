@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{8F16D4A9-4
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinUtils", "BinUtils\BinUtils.csproj", "{DCD97848-145F-45C0-8EC9-D68A7E421F1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emulator", "Emulator\Emulator.csproj", "{563FCC08-C537-43A3-98DA-85CD48753579}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DCD97848-145F-45C0-8EC9-D68A7E421F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCD97848-145F-45C0-8EC9-D68A7E421F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCD97848-145F-45C0-8EC9-D68A7E421F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{563FCC08-C537-43A3-98DA-85CD48753579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{563FCC08-C537-43A3-98DA-85CD48753579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{563FCC08-C537-43A3-98DA-85CD48753579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{563FCC08-C537-43A3-98DA-85CD48753579}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
