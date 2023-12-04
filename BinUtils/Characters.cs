@@ -54,7 +54,7 @@ public static class Characters
             new('7', 1, 0b00_0111),
             new('8', 1, 0b00_1000),
             new('9', 0, 0b00_1001),
-            new('0', 0, 0b00_1010),//record mark
+            new('0', 0, 0b00_1010),
             new('#', 1, 0b00_1011),
             new('@', 0, 0b00_1100),
             new('t', 1, 0b00_1111),//tape mark
@@ -82,6 +82,11 @@ public static class Characters
     public static Character Get(byte val)
     {
         return All.First(x => x.Value == val);
+    }
+    
+    public static Character Get(char c)
+    {
+        return All.First(x => x.Char == c);
     }
 }
 
