@@ -8,7 +8,7 @@ What would be coolest piece of furniture for a software developer's apartment? T
 
 ![705 console](./Docs/Images/consoleWithLightsNarrow.jpg)
 
-It's the sort of thing that'll spark conversation no matter the occasion, uses a decimal number system is easy to explain and its soft flickering lights create the sensation of a camp fire at night, gently twinkling away.
+It's the sort of thing that'll spark conversation no matter the occasion, uses a decimal number system that's easy to explain and has soft flickering lights create the sensation of a camp fire at night, gently twinkling away as it (very slowly) computes.
 
 Most importantly however, it'll be something to brighten the day of my little nieces when they come to visit, who'll love playing with the lights, buttons and switches.
 
