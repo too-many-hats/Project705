@@ -1,6 +1,6 @@
 ﻿namespace Emulator.Devices;
 
-public class TapeUnit : IDevice, IOutputDevice, IInputDevice
+public class TapeUnit : IOutputDevice, IInputDevice
 {
     public string Name => "727 Magnetic Tape Unit";
     public decimal MonthlyRental1958 => 550;

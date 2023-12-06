@@ -1,6 +1,6 @@
 ﻿namespace Emulator.Devices;
 
-public interface IInputDevice
+public interface IInputDevice : IDevice
 {
     public int AddressLow { get; }
     public int AddressHigh { get; }

@@ -1,6 +1,6 @@
 ﻿namespace Emulator.Devices;
 
-public class Printer730 : IDevice, IOutputDevice
+public class Printer730 : IOutputDevice
 {
     public string Name => "730 Printer";
     public decimal MonthlyRental1958 => 3900;

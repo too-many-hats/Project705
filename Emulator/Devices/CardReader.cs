@@ -1,7 +1,7 @@
 ﻿
 namespace Emulator.Devices;
 
-public class CardReader : IDevice, IInputDevice
+public class CardReader : IInputDevice
 {
     public string Name => "714 Card Reader";
     public decimal MonthlyRental1958 => 1500;

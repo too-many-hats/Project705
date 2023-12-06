@@ -1,7 +1,7 @@
 ﻿
 namespace Emulator.Devices;
 
-public class CardPunch : IDevice, IOutputDevice
+public class CardPunch : IOutputDevice
 {
     public string Name => "722 Card Punch";
     public decimal MonthlyRental1958 => 800;

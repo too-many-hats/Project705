@@ -1,6 +1,6 @@
 ﻿namespace Emulator.Devices;
 
-public class Drum : IDevice, IOutputDevice, IInputDevice
+public class Drum : IOutputDevice, IInputDevice
 {
     public string Name => "734 Magnetic Drum Storage";
     public decimal MonthlyRental1958 => 2300;

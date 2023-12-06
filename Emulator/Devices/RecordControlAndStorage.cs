@@ -1,6 +1,6 @@
 ﻿namespace Emulator.Devices;
 
-public class RecordControlAndStorage : IDevice, IOutputDevice, IInputDevice
+public class RecordControlAndStorage : IOutputDevice, IInputDevice
 {
     public string Name => "760 Control & Storage";
     public decimal MonthlyRental1958 => 2500;
