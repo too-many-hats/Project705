@@ -102,7 +102,9 @@ public class Installation
 
         var recordStorageAndControl = new RecordControlAndStorage
         {
-            AttachedDevices = [printer730]
+            AttachedDevices = [printer730],
+            AddressLow = 210,
+            AddressHigh = 214,
         };
 
         var console = new ConsoleAndTypewriter();

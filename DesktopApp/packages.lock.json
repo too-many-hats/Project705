@@ -680,7 +680,10 @@
         "type": "Project"
       },
       "emulator": {
-        "type": "Project"
+        "type": "Project",
+        "dependencies": {
+          "BinUtils": "[1.0.0, )"
+        }
       }
     }
   }
