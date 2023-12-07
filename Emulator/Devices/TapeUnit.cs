@@ -1,5 +1,8 @@
-﻿namespace Emulator.Devices;
+﻿using System.Diagnostics;
 
+namespace Emulator.Devices;
+
+[DebuggerVisualizer("{Name} - {AddressLow},{AddressHigh}")]
 public class TapeUnit : IOutputDevice, IInputDevice
 {
     public string Name => "727 Magnetic Tape Unit";

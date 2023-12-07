@@ -110,6 +110,10 @@ public class Instruction
                 address = value - 10000;
                 zoneBitsValue = 1;
             }
+            else
+            {
+                address = value;
+            }
 
             var addressCharacters = new Character[4];
 
@@ -122,7 +126,7 @@ public class Instruction
 
             for (var i = 0; i < addressCharacters.Length; i++)
             {
-                _instruction[i + 1] = addressCharacters[4 - i].Value;
+                _instruction[i + 1] = addressCharacters[4 - i - 1].Value;
             }
 
             _instruction[ThousandsDigit] = ReplaceZoneBits(_instruction[ThousandsDigit], zoneBitsValue << 4);

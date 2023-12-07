@@ -1,6 +1,8 @@
-﻿
+﻿using System.Diagnostics;
+
 namespace Emulator.Devices;
 
+[DebuggerVisualizer("{Name} - {AddressLow},{AddressHigh}")]
 public class CardReader : IInputDevice
 {
     public string Name => "714 Card Reader";

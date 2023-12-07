@@ -1,4 +1,5 @@
 ﻿using Emulator.Devices;
+using Emulator.Devices.Cpu;
 
 namespace Emulator;
 
@@ -16,10 +17,8 @@ public class Installation
             CalculateStatistics(device, result);
         }
 
-        const decimal inflationChangeSince1958 = 9.6461M;
-
-        result.PurchaseCost = result.PurchaseCost + result.PurchaseCost * inflationChangeSince1958;
-        result.MonthlyCost = result.MonthlyCost + result.MonthlyCost * inflationChangeSince1958;
+        result.PurchaseCost = InflationUtils.Adjust1958ToToday(result.PurchaseCost);
+        result.MonthlyCost = InflationUtils.Adjust1958ToToday(result.MonthlyCost);
 
         return result;
     }
@@ -107,7 +106,11 @@ public class Installation
             AddressHigh = 214,
         };
 
-        var console = new ConsoleAndTypewriter();
+        var console = new ConsoleAndTypewriter
+        {
+            AddressLow = 500,
+            AddressHigh = 500,
+        };
 
         var cpu = new Processor
         { 
@@ -120,5 +123,32 @@ public class Installation
         installation.IndependentDevices.Add(cpu);
 
         return installation;
+    }
+
+    public IEnumerable<T> GetDevices<T>()
+    {
+        var matchingDevices = new List<IDevice>();
+
+        foreach (var device in IndependentDevices)
+        {
+            FindDevicesByType<T>(device, matchingDevices);
+        }
+
+        return matchingDevices.Cast<T>();
+    }
+
+    private List<IDevice> FindDevicesByType<T>(IDevice device, List<IDevice> matchingDevices)
+    {
+        if (device.GetType() == typeof(T))
+        {
+            matchingDevices.Add(device);
+        }
+
+        foreach (var attachedDevice in device.AttachedDevices)
+        {
+            FindDevicesByType<T>(attachedDevice, matchingDevices);
+        }
+
+        return matchingDevices;
     }
 }

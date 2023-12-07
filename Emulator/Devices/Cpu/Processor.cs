@@ -38,12 +38,46 @@ public class Processor : IDevice
     public ExecutionMode ExecutionMode = ExecutionMode.Manual;
     public ulong ExecutionTime = 0;
 
+    public bool IsPoweredOn = false;
+
     private readonly byte STORAGE_MARK = Characters.Get('a').Value; // storage mark is used frequently, so cache it on initialisation.
 
-
-    public ulong Cycle(ulong targetMicroseconds)
+    public void Cycle(ulong targetMicroseconds, bool isStep)
     {
-        return 0;
+        var executionTimeAtStart = ExecutionTime;
+
+        if (IsPoweredOn is false)
+        {
+            return;
+        }
+
+        // in manual mode, only physically pressing the start button can step the machine forward, one half cycle at a time.
+        if (ExecutionMode == ExecutionMode.Manual && isStep is false)
+        {
+            return;
+        }
+
+        while (ExecutionTime < targetMicroseconds + executionTimeAtStart)
+        {
+            if (CycleType == CycleType.Instruction)
+            {
+
+            }
+            else if (CycleType == CycleType.Execution)
+            {
+
+            }
+
+            if (ExecutionMode is ExecutionMode.Manual)
+            {
+                return;
+            }
+        }
+    }
+
+    public void Cycle(ulong targetMicroseconds)
+    {
+        Cycle(targetMicroseconds, false);
     }
 
     public void ResetToPowerOnState()
@@ -68,6 +102,7 @@ public class Processor : IDevice
         CycleType = CycleType.Instruction;
         ExecutionMode = ExecutionMode.Manual;
         ExecutionTime = 0;
+        IsPoweredOn = true;
     }
 }
 

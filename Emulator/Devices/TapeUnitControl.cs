@@ -1,5 +1,8 @@
-﻿namespace Emulator.Devices;
+﻿using System.Diagnostics;
 
+namespace Emulator.Devices;
+
+[DebuggerVisualizer("{Name} - {AddressLow},{AddressHigh}")]
 public class TapeUnitControl : IDevice
 {
     public string Name => "754 Tape Control";

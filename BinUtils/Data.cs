@@ -25,7 +25,7 @@ public static class Data
     }
 
     /// <summary>
-    /// Encode a number of unlimited decimal digits. Number is padded with zeros to if it has less decimal digits than the length parameter. Number is truncated if it has more decimal digits than the length parameter.
+    /// Encode a number of unlimited decimal digits. Number is padded with zeros if it has less decimal digits than the length parameter. Number is truncated if it has more decimal digits than the length parameter.
     /// </summary>
     /// <param name="data">The number to encode, unlimited number of digits.</param>
     /// <param name="length">The field length of the number, padded with zeros to the left if required.</param>

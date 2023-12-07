@@ -1,5 +1,8 @@
-﻿namespace Emulator.Devices;
+﻿using System.Diagnostics;
 
+namespace Emulator.Devices;
+
+[DebuggerVisualizer("{Name} - {AddressLow},{AddressHigh}")]
 public class Printer717 : IOutputDevice
 {
     public string Name => "717 Printer";

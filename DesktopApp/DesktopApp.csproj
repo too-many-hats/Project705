@@ -26,6 +26,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\BinUtils\BinUtils.csproj" />
+		<ProjectReference Include="..\DebugAssembler\DebugAssembler.csproj" />
 		<ProjectReference Include="..\Emulator\Emulator.csproj" />
 	</ItemGroup>
 

@@ -4,29 +4,49 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:DesktopApp.Views"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" Width="400" Height="660"
         x:Class="DesktopApp.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="DesktopApp">
+        Title="DesktopApp"
+		Padding="6,6,6,6">
 	<Grid>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="*"></RowDefinition>
 			<RowDefinition Height="28"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
+			<RowDefinition Height="84"></RowDefinition>
 		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
-			
+
 		</Grid.ColumnDefinitions>
-		<Grid Grid.Row="1">
+		<Grid Grid.Row="1" Name="InstallationComponetsGrid">
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="200"></ColumnDefinition>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+				<ColumnDefinition Width="50"></ColumnDefinition>
+				<ColumnDefinition Width="100"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="28"></RowDefinition>
+			</Grid.RowDefinitions>
+			<Label Grid.Column="0">Device</Label>
+			<Label Grid.Column="1">Addr</Label>
+			<Label Grid.Column="2">Rental per/mo</Label>
+		</Grid>
+		<Grid Grid.Row="2">
+			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="150"></ColumnDefinition>
-				<ColumnDefinition Width="200"></ColumnDefinition>
 				<ColumnDefinition Width="150"></ColumnDefinition>
 			</Grid.ColumnDefinitions>
-			<Label Grid.Column="0">Installation Purchase Cost:</Label>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="28"></RowDefinition>
+				<RowDefinition Height="28"></RowDefinition>
+				<RowDefinition Height="28"></RowDefinition>
+			</Grid.RowDefinitions>
+			<Label Grid.Column="0">Purchase Cost:</Label>
 			<Label Grid.Column="1" Name="InstallationCostLabel"></Label>
-			<Label Grid.Column="2">Installation Monthly Rental:</Label>
-			<Label Grid.Column="3" Name="InstallationRentalLabel"></Label>
+			<Label Grid.Column="0" Grid.Row="1">Monthly Rental:</Label>
+			<Label Grid.Column="1" Grid.Row="1" Name="InstallationRentalLabel"></Label>
+			<Label Grid.Column="0" Grid.Row="2">Problem Cost:</Label>
+			<Label Grid.Column="1" Grid.Row="2" Name="InstallationExecutionTimeCostLabel"></Label>
 		</Grid>
 	</Grid>
 </Window>

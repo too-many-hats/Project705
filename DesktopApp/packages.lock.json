@@ -679,6 +679,12 @@
       "binutils": {
         "type": "Project"
       },
+      "debugassembler": {
+        "type": "Project",
+        "dependencies": {
+          "BinUtils": "[1.0.0, )"
+        }
+      },
       "emulator": {
         "type": "Project",
         "dependencies": {

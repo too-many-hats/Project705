@@ -1,6 +1,8 @@
-﻿
+﻿using System.Diagnostics;
+
 namespace Emulator.Devices;
 
+[DebuggerVisualizer("{Name} - {AddressLow},{AddressHigh}")]
 public class CardPunchControl : IDevice
 {
     public string Name => "758 Card Punch Control";
