@@ -57,10 +57,34 @@ public class Processor : IDevice
             return;
         }
 
+
+        // do not attempt to execute instructions if a fault has occurred.
+        if (FourOrNineCheck || OperationCheck)
+        {
+            return;
+        }
+
         while (ExecutionTime < targetMicroseconds + executionTimeAtStart)
         {
             if (CycleType == CycleType.Instruction)
             {
+                if (InstructionCounter % 10 != 4 && InstructionCounter % 10 != 9)
+                {
+                    FourOrNineCheck = true;
+                    return;
+                }
+
+                var instruction = new Instruction(new Span<byte>(Memory, InstructionCounter - 4, 5));
+                OperationRegister = instruction.Opcode;
+
+                StorageSelectRegister = instruction.Asu;
+
+                if (InstructionDefs.All.Any(x => x.Opcode == OperationRegister))
+                {
+                    OperationCheck = true;
+                    return;
+                }
+
 
             }
             else if (CycleType == CycleType.Execution)
