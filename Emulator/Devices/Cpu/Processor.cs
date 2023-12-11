@@ -70,26 +70,239 @@ public class Processor : IDevice
             {
                 if (InstructionCounter % 10 != 4 && InstructionCounter % 10 != 9)
                 {
-                    FourOrNineCheck = true;
+                    SetFourOrNineCheck(true);
                     return;
                 }
 
                 var instruction = new Instruction(new Span<byte>(Memory, InstructionCounter - 4, 5));
-                OperationRegister = instruction.Opcode;
+                SetOperationRegister(instruction.Opcode);
+                SetStorageSelectRegister(instruction.Asu);
+                SetMemoryAddressRegister(instruction.Address);
 
-                StorageSelectRegister = instruction.Asu;
-
-                if (InstructionDefs.All.Any(x => x.Opcode == OperationRegister))
+                if (InstructionDefs.All.Any(x => x.Opcode == OperationRegister) == false)
                 {
-                    OperationCheck = true;
+                    SetOperationCheck(true);
                     return;
                 }
 
-
+                // ACCURACY: The manual doesn't define when or if a CTRL instruction can trigger an opcode check if an invalid address portion is used.
+                // The emulator does trigger an invalid operation check.
+                if (OperationRegister == 0b00_0011 && (instruction.Address > 5 || instruction.Address is 26 or 27 or 28 or 29)) // '3' CTRL instruction.
+                {
+                    SetOperationCheck(true);
+                    return;
+                }
             }
             else if (CycleType == CycleType.Execution)
             {
+                if (OperationRegister == 0b11_0111) // 'G' ADD instruction
+                {
 
+                }
+                else if (OperationRegister == 0b00_0110) // '6' ADM instruction
+                {
+
+                }
+                else if (OperationRegister == 0b00_0100) // '4' CMP instruction
+                {
+
+                }
+                else if (OperationRegister == 0b00_0011) // '3' IOF instruction
+                {
+                    if (MemoryAddressRegister == 0) // IOF instruction
+                    {
+
+                    }
+                    else if (MemoryAddressRegister == 1) // WTM instruction
+                    {
+
+                    }
+                    else if (MemoryAddressRegister == 2) // RWD instruction
+                    {
+
+                    }
+                    else if (MemoryAddressRegister == 3) // ION instruction
+                    {
+
+                    }
+                    else if (MemoryAddressRegister == 4) // BSP instruction
+                    {
+
+                    }
+                    else if (MemoryAddressRegister == 5) // SUP instruction
+                    {
+
+                    }
+                    else if (MemoryAddressRegister == 26) // RWS instruction
+                    {
+
+                    }
+                    else if (MemoryAddressRegister == 27) // RWT instruction
+                    {
+
+                    }
+                    else if (MemoryAddressRegister == 28) // RST instruction
+                    {
+
+                    }
+                    else if (MemoryAddressRegister == 29) // PTW instruction
+                    {
+
+                    }
+                }
+                else if (OperationRegister == 0b01_0110) // 'W' DIV instruction
+                {
+
+                }
+                else if (OperationRegister == 0b11_0100) // 'D' LNG instruction
+                {
+
+                }
+                else if (OperationRegister == 0b00_1000) // '8' LOD instruction
+                {
+
+                }
+                else if (OperationRegister == 0b01_0101) // 'V' MPY instruction
+                {
+
+                }
+                else if (OperationRegister == 0b11_0001) // 'A' NOP instruction
+                {
+
+                }
+                else if (OperationRegister == 0b01_0111) // 'X' NTR instruction
+                {
+
+                }
+                else if (OperationRegister == 0b01_1000) // 'Y' RD instruction
+                {
+                    if (StorageSelectRegister == 1) // FSP instruction
+                    {
+
+                    }
+                    else // RD (0) instruction
+                    {
+
+                    }
+                }
+                else if (OperationRegister == 0b01_0010) // 'S' RWW instruction
+                {
+
+                }
+                else if (OperationRegister == 0b01_0100) // 'U' RCV instruction
+                {
+
+                }
+                else if (OperationRegister == 0b11_1000) // 'H' RAD instruction
+                {
+
+                }
+                else if (OperationRegister == 0b10_1000) // 'Q' RSU instruction
+                {
+
+                }
+                else if (OperationRegister == 0b11_0101) // 'E' RND instruction
+                {
+
+                }
+                else if (OperationRegister == 0b00_0010) // '2' SEL instruction
+                {
+
+                }
+                else if (OperationRegister == 0b10_1001) // 'R' SET instruction
+                {
+
+                }
+                else if (OperationRegister == 0b11_0011) // 'C' SHR instruction
+                {
+
+                }
+                else if (OperationRegister == 0b01_0011) // 'T' SGN instruction
+                {
+
+                }
+                else if (OperationRegister == 0b10_0001) // 'J' HLT instruction
+                {
+
+                }
+                else if (OperationRegister == 0b11_0110) // 'F' ST instruction
+                {
+
+                }
+                else if (OperationRegister == 0b00_0101) // '5' SPR instruction
+                {
+
+                }
+                else if (OperationRegister == 0b10_0111) // 'P' SUB instruction
+                {
+
+                }
+                else if (OperationRegister == 0b00_0001) // '1' TR instruction
+                {
+
+                }
+                else if (OperationRegister == 0b11_1001) // 'I' TRA instruction
+                {
+
+                }
+                else if (OperationRegister == 0b10_0011) // 'L' TRE instruction
+                {
+
+                }
+                else if (OperationRegister == 0b10_0010) // 'K' TRH instruction
+                {
+
+                }
+                else if (OperationRegister == 0b10_0100) // 'M' TRP instruction
+                {
+
+                }
+                else if (OperationRegister == 0b10_0110) // 'O' TRS instruction
+                {
+
+                }
+                else if (OperationRegister == 0b10_0101) // 'N' TRZ instruction
+                {
+
+                }
+                else if (OperationRegister == 0b00_1001) // '9' TMT instruction
+                {
+
+                }
+                else if (OperationRegister == 0b00_0111) // '7' UNL instruction
+                {
+
+                }
+                else if (OperationRegister == 0b10_1001) // 'R' WR instruction
+                {
+                    if (StorageSelectRegister == 1) // DMP instruction
+                    {
+
+                    }
+                    else if (StorageSelectRegister == 2) // DMP instruction
+                    {
+
+                    }
+                    else // WR (0) instruction
+                    {
+
+                    }
+                }
+                else if (OperationRegister == 0b01_1001) // 'Z' WR instruction
+                {
+                    if (StorageSelectRegister == 1) // WRE (1) instruction
+                    {
+
+                    }
+                    else // WRE (0) instruction
+                    {
+
+                    }
+                }
+                else
+                {
+                    throw new NotImplementedException("OperationCheck failed, invalid instructions should be detected and handled during I-time.");
+                }
             }
 
             if (ExecutionMode is ExecutionMode.Manual)
@@ -127,6 +340,41 @@ public class Processor : IDevice
         ExecutionMode = ExecutionMode.Manual;
         ExecutionTime = 0;
         IsPoweredOn = true;
+    }
+
+    private void SetOperationRegister(int value)
+    {
+        OperationRegister = value;
+    }
+
+    private void SetStorageSelectRegister(int value)
+    {
+        StorageSelectRegister = value;
+    }
+
+    private void SetFourOrNineCheck(bool value)
+    {
+        FourOrNineCheck = value;
+    }
+
+    private void SetOperationCheck(bool value)
+    {
+        OperationCheck = value;
+    }
+
+    private void SetMemoryAddressCounter1(int value)
+    {
+        MemoryAddressCounter1 = value;
+    }
+
+    private void SetMemoryAddressCounter2(int value)
+    {
+        MemoryAddressCounter2 = value;
+    }
+
+    private void SetMemoryAddressRegister(int value)
+    {
+        MemoryAddressCounter2 = value;
     }
 }
 
